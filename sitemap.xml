@@ -7,6 +7,12 @@
   <url><loc>https://academysbd.ru/services/individualnyy-kouching/</loc><priority>0.9</priority></url>
   <url><loc>https://academysbd.ru/services/korporativnaya-mediaciya/</loc><priority>0.9</priority></url>
 
+  <url><loc>https://academysbd.ru/cases/integraciya-komand/</loc><priority>0.8</priority></url>
+  <url><loc>https://academysbd.ru/cases/vnedrenie-cennostey/</loc><priority>0.8</priority></url>
+  <url><loc>https://academysbd.ru/cases/podderzhka-v-izmeneniyah/</loc><priority>0.8</priority></url>
+  <url><loc>https://academysbd.ru/cases/mediaciya-sobstvennikov/</loc><priority>0.8</priority></url>
+  <url><loc>https://academysbd.ru/cases/mediaciya-komand/</loc><priority>0.8</priority></url>
+
   <url><loc>https://academysbd.ru/blog/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://academysbd.ru/blog/komandnaya-sessiya-priznaki/</loc><lastmod>2026-05-12</lastmod><priority>0.7</priority></url>
   <url><loc>https://academysbd.ru/blog/tochka-opory-rukovoditelya/</loc><lastmod>2026-05-08</lastmod><priority>0.7</priority></url>
