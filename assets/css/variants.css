@@ -1,0 +1,156 @@
+/* ============================================================
+   ВАРИАНТЫ ОБЛЕГЧЁННОЙ ГЛАВНОЙ (A / B / C)
+   Подключается дополнительно к style.css
+   ============================================================ */
+
+/* ---- Переключатель вариантов (тонкая верхняя плашка) ---- */
+.variant-bar {
+  background: var(--dark); color: #fff; font-size: 13px;
+}
+.variant-bar .container { display: flex; align-items: center; gap: 14px; height: 44px; flex-wrap: wrap; }
+.variant-bar .vb-label { opacity: .7; }
+.variant-bar a { color: rgba(255,255,255,.7); padding: 5px 12px; border-radius: 999px; font-weight: 600; }
+.variant-bar a:hover { color: #fff; background: rgba(255,255,255,.12); }
+.variant-bar a.active { color: #fff; background: var(--accent); }
+.variant-bar .spacer { margin-left: auto; }
+
+/* ---- Карусель (scroll-snap, минимум JS) ---- */
+.carousel { position: relative; }
+.carousel-viewport {
+  display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; padding: 4px 2px 14px; -ms-overflow-style: none; scrollbar-width: none;
+}
+.carousel-viewport::-webkit-scrollbar { display: none; }
+.carousel-slide { scroll-snap-align: start; flex: 0 0 auto; width: calc((100% - 48px) / 3); }
+.carousel-slide > * { height: 100%; }
+.carousel-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 8px; gap: 16px; }
+.carousel-btn {
+  width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--border);
+  background: #fff; color: var(--dark); font-size: 20px; cursor: pointer; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center; transition: all .2s;
+}
+.carousel-btn:hover { background: var(--dark); color: #fff; border-color: var(--dark); }
+.carousel-btns { display: flex; gap: 10px; }
+.carousel-hint { color: var(--text-muted); font-size: 13px; }
+
+@media (max-width: 900px) { .carousel-slide { width: calc((100% - 24px) / 2); } }
+@media (max-width: 600px) { .carousel-slide { width: 85%; } }
+
+/* ---- Бегущая лента логотипов (marquee) ---- */
+.logo-marquee { overflow: hidden; position: relative; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.logo-marquee .track { display: flex; gap: 56px; width: max-content; animation: marquee 40s linear infinite; }
+.logo-marquee:hover .track { animation-play-state: paused; }
+.logo-marquee img { height: 44px; width: auto; object-fit: contain; filter: grayscale(100%); opacity: .6; transition: all .2s; }
+.logo-marquee img:hover { filter: grayscale(0); opacity: 1; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* Чистое «место под фото» — выглядит интенционально, без мусорных градиентов */
+.photo-slot {
+  border: 1px dashed var(--gray-light); border-radius: var(--radius);
+  background: var(--bg-gray); display: flex; align-items: center; justify-content: center;
+  color: var(--gray); font-size: 14px; min-height: 280px; text-align: center; padding: 20px;
+}
+.photo-slot.round { border-radius: 50%; min-height: 0; aspect-ratio: 1; }
+.photo-slot .ic { font-size: 30px; opacity: .5; }
+
+/* ===========================================================
+   ВАРИАНТ A — «Воздух» (минимализм / editorial)
+   =========================================================== */
+.v-air { --maxw: 1080px; }
+.v-air .section { padding: 110px 0; }
+.v-air .a-hero { padding: 120px 0 90px; text-align: center; }
+.v-air .a-hero .eyebrow { letter-spacing: .22em; text-transform: uppercase; font-size: 12px; color: var(--gray); }
+.v-air .a-hero h1 { font-size: clamp(40px, 7vw, 78px); font-weight: 300; line-height: 1.06; letter-spacing: -.02em; color: var(--dark); margin: 26px auto; max-width: 14ch; }
+.v-air .a-hero h1 b { font-weight: 700; color: var(--primary); }
+.v-air .a-hero p { font-size: 20px; color: var(--text-muted); max-width: 520px; margin: 0 auto 36px; }
+.v-air .manifesto { text-align: center; max-width: 820px; margin: 0 auto; }
+.v-air .manifesto p { font-size: clamp(24px, 3.4vw, 34px); font-weight: 300; line-height: 1.45; color: var(--dark); letter-spacing: -.01em; }
+.v-air .manifesto p b { font-weight: 700; color: var(--primary); }
+.v-air .values-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 44px; }
+.v-air .values-row span { border: 1px solid var(--border); border-radius: 999px; padding: 10px 22px; color: var(--dark); font-weight: 500; }
+.v-air .format-line { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 30px 0; border-top: 1px solid var(--border); }
+.v-air .format-line:last-child { border-bottom: 1px solid var(--border); }
+.v-air .format-line h3 { font-size: clamp(22px, 3vw, 30px); font-weight: 400; color: var(--dark); margin: 0; }
+.v-air .format-line p { color: var(--text-muted); margin: 0; max-width: 420px; font-size: 15px; }
+.v-air .format-line a { white-space: nowrap; color: var(--primary); font-weight: 600; }
+.v-air .a-cta { text-align: center; }
+.v-air .a-cta h2 { font-size: clamp(30px, 5vw, 48px); font-weight: 300; color: var(--dark); margin: 0 0 28px; }
+
+/* ===========================================================
+   ВАРИАНТ B — «С душой» (тёплый / человечный)
+   =========================================================== */
+.v-soul { background: #fffdfb; }
+.v-soul .section { padding: 88px 0; }
+.v-soul .b-hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding: 70px 0 80px; }
+.v-soul .b-hero .eyebrow { color: var(--accent); font-weight: 700; letter-spacing: .05em; }
+.v-soul .b-hero h1 { font-size: clamp(34px, 5vw, 56px); font-weight: 700; line-height: 1.1; color: var(--dark); margin: 14px 0 20px; }
+.v-soul .b-hero h1 .u { background: linear-gradient(transparent 62%, var(--peach) 62%); }
+.v-soul .b-hero p { font-size: 19px; color: var(--text-muted); margin: 0 0 30px; }
+.v-soul .story { max-width: 760px; margin: 0 auto; text-align: center; }
+.v-soul .story .lead-quote { font-size: clamp(24px, 3.4vw, 32px); font-weight: 600; color: var(--dark); line-height: 1.4; }
+.v-soul .story .lead-quote b { color: var(--primary); }
+.v-soul .story p { font-size: 18px; color: var(--text-muted); line-height: 1.75; margin-top: 22px; }
+.v-soul .signature { margin-top: 26px; font-style: italic; color: var(--gray); }
+.v-soul .team-warm { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
+.v-soul .team-warm .person { text-align: center; }
+.v-soul .team-warm .photo-slot.round { margin: 0 auto 16px; max-width: 150px; }
+.v-soul .team-warm h3 { font-size: 18px; color: var(--dark); margin: 0 0 4px; }
+.v-soul .team-warm .role { color: var(--accent); font-size: 13px; font-weight: 600; }
+.v-soul .values-manifest { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; max-width: 900px; margin: 0 auto; }
+.v-soul .vm { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+.v-soul .vm .em { font-size: 26px; }
+.v-soul .vm h3 { color: var(--dark); margin: 12px 0 8px; font-size: 19px; }
+.v-soul .vm p { color: var(--text-muted); margin: 0; font-size: 15px; }
+.v-soul .b-hero .photo-slot { min-height: 380px; }
+
+/* ===========================================================
+   ВАРИАНТ C — «Конверсионный» (лендинг)
+   =========================================================== */
+.v-conv .c-hero { background: linear-gradient(135deg, var(--dark), var(--primary)); color: #fff; padding: 64px 0 72px; }
+.v-conv .c-hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+.v-conv .c-hero .eyebrow { color: var(--light-blue); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; font-size: 13px; }
+.v-conv .c-hero h1 { font-size: clamp(32px, 4.6vw, 50px); font-weight: 800; line-height: 1.1; margin: 14px 0 18px; }
+.v-conv .c-hero h1 .hl { color: var(--accent); }
+.v-conv .c-hero p { font-size: 19px; color: rgba(255,255,255,.9); margin: 0 0 26px; }
+.v-conv .hero-trust { display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap; }
+.v-conv .hero-trust div b { font-size: 28px; font-weight: 800; color: #fff; display: block; line-height: 1; }
+.v-conv .hero-trust div span { font-size: 13px; color: rgba(255,255,255,.75); }
+.v-conv .lead-card { background: #fff; border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow-hover); }
+.v-conv .lead-card h3 { color: var(--dark); margin: 0 0 6px; font-size: 21px; }
+.v-conv .lead-card p { color: var(--text-muted); font-size: 14px; margin: 0 0 18px; }
+.v-conv .lead-card input { width: 100%; padding: 13px 16px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font); font-size: 15px; margin-bottom: 12px; background: var(--bg-gray); }
+.v-conv .lead-card .btn { width: 100%; justify-content: center; }
+.v-conv .lead-card .small { font-size: 12px; color: var(--gray); text-align: center; margin: 10px 0 0; }
+.v-conv .benefits { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.v-conv .benefit { text-align: center; padding: 26px 18px; }
+.v-conv .benefit .em { width: 56px; height: 56px; border-radius: 16px; background: var(--bg-soft); color: var(--primary); display: inline-flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 14px; }
+.v-conv .benefit h3 { font-size: 17px; color: var(--dark); margin: 0 0 8px; }
+.v-conv .benefit p { font-size: 14px; color: var(--text-muted); margin: 0; }
+.v-conv .teaser-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.v-conv .teaser { border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all .2s; }
+.v-conv .teaser:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow); }
+.v-conv .teaser h3 { font-size: 17px; color: var(--dark); margin: 0 0 8px; }
+.v-conv .teaser p { font-size: 14px; color: var(--text-muted); margin: 0 0 14px; }
+.v-conv .teaser a { color: var(--primary); font-weight: 700; font-size: 14px; }
+/* Липкая нижняя CTA-плашка */
+.sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  background: rgba(29,77,102,.97); backdrop-filter: blur(8px); color: #fff;
+  transform: translateY(110%); transition: transform .35s ease;
+}
+.sticky-cta.show { transform: translateY(0); }
+.sticky-cta .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 24px; flex-wrap: wrap; }
+.sticky-cta b { font-size: 16px; }
+.sticky-cta span { color: rgba(255,255,255,.8); font-size: 14px; }
+
+@media (max-width: 900px) {
+  .v-soul .b-hero, .v-conv .c-hero-grid { grid-template-columns: 1fr; gap: 30px; }
+  .v-soul .team-warm { grid-template-columns: repeat(2, 1fr); }
+  .v-soul .values-manifest, .v-conv .benefits { grid-template-columns: 1fr 1fr; }
+  .v-conv .teaser-grid { grid-template-columns: 1fr 1fr; }
+  .v-air .format-line { flex-direction: column; gap: 8px; }
+}
+@media (max-width: 560px) {
+  .v-soul .team-warm, .v-soul .values-manifest, .v-conv .benefits, .v-conv .teaser-grid { grid-template-columns: 1fr; }
+  .sticky-cta .btn { width: 100%; justify-content: center; }
+}

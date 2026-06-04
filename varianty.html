@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Варианты главной страницы — СинтезЛаб</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .chooser-hero { background: linear-gradient(135deg, var(--dark), var(--primary)); color: #fff; padding: 64px 0 56px; text-align: center; }
+    .chooser-hero h1 { font-size: clamp(30px, 5vw, 46px); margin: 12px 0 14px; color: #fff; font-weight: 800; }
+    .chooser-hero p { color: rgba(255,255,255,.85); font-size: 18px; max-width: 640px; margin: 0 auto; }
+    .variant-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin: 50px 0; }
+    .vcard { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform .25s, box-shadow .25s; }
+    .vcard:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+    .vcard .vtop { height: 150px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 30px; font-weight: 800; letter-spacing: .04em; }
+    .vcard.a .vtop { background: linear-gradient(135deg, #d0d1d4, #2b6e91); }
+    .vcard.b .vtop { background: linear-gradient(135deg, #f5cca0, #f19d51); }
+    .vcard.c .vtop { background: linear-gradient(135deg, #1d4d66, #2b6e91); }
+    .vcard .vbody { padding: 26px; display: flex; flex-direction: column; flex: 1; }
+    .vcard h2 { font-size: 22px; color: var(--dark); margin: 0 0 8px; }
+    .vcard .tag { font-size: 13px; color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+    .vcard p { color: var(--text-muted); font-size: 15px; flex: 1; margin: 12px 0 20px; }
+    .vcard ul { margin: 0 0 22px; padding-left: 18px; color: var(--text-muted); font-size: 14px; }
+    .vcard ul li { margin-bottom: 6px; }
+    .center-link { text-align: center; padding-bottom: 60px; }
+  </style>
+</head>
+<body>
+  <div class="demo-ribbon">DEMO</div>
+
+  <section class="chooser-hero">
+    <div class="container">
+      <span style="color:var(--light-blue);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px;">СинтезЛаб · облегчённый дизайн</span>
+      <h1>Три варианта главной страницы</h1>
+      <p>Мы переработали главную, чтобы она стала легче, приятнее и лучше передавала ваши ценности. Откройте каждый вариант и скажите, какой ближе — на его основе доведём финал.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="variant-cards">
+      <div class="vcard a">
+        <div class="vtop">A</div>
+        <div class="vbody">
+          <span class="tag">Воздух</span>
+          <h2>Минимализм</h2>
+          <p>Максимум пустого пространства, крупная лёгкая типографика, спокойный премиальный тон.</p>
+          <ul>
+            <li>6–7 секций вместо 11</li>
+            <li>Кейсы и отзывы — в каруселях</li>
+            <li>Логотипы — бегущей лентой</li>
+          </ul>
+          <a href="index-a.html" class="btn btn-primary" style="justify-content:center;">Открыть вариант A</a>
+        </div>
+      </div>
+      <div class="vcard b">
+        <div class="vtop">B</div>
+        <div class="vbody">
+          <span class="tag">С душой</span>
+          <h2>Человечный</h2>
+          <p>Во главе — люди и история. Ценности как живой манифест, тёплая подача, акцент на доверии.</p>
+          <ul>
+            <li>Фото команды и сторителлинг</li>
+            <li>Ценности — отдельными блоками</li>
+            <li>Тёплая палитра</li>
+          </ul>
+          <a href="index-b.html" class="btn btn-primary" style="justify-content:center;">Открыть вариант B</a>
+        </div>
+      </div>
+      <div class="vcard c">
+        <div class="vtop">C</div>
+        <div class="vbody">
+          <span class="tag">Конверсионный</span>
+          <h2>Под трафик</h2>
+          <p>Структура лендинга: оффер и форма сразу, соцдоказательство рано, липкая кнопка — под заявки.</p>
+          <ul>
+            <li>Форма заявки в первом экране</li>
+            <li>Короткие блоки-тизеры</li>
+            <li>Липкая нижняя кнопка</li>
+          </ul>
+          <a href="index-c.html" class="btn btn-primary" style="justify-content:center;">Открыть вариант C</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="center-link">
+      <a href="index.html" class="btn btn-outline">← Текущая версия главной</a>
+    </div>
+  </main>
+
+  <footer class="site-footer no-margin">
+    <div class="container">
+      <div class="footer-bottom" style="padding-top:0;border:0;">
+        <span>© 2026 СинтезЛаб. Демонстрационные варианты главной.</span>
+        <span>Выберите вариант — доведём до финала</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
