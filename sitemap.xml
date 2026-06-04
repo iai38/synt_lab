@@ -2,6 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://academysbd.ru/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
+  <url><loc>https://academysbd.ru/ceny/</loc><priority>0.9</priority></url>
+
   <url><loc>https://academysbd.ru/services/komandnye-sessii/</loc><priority>0.9</priority></url>
   <url><loc>https://academysbd.ru/services/strategicheskie-sessii/</loc><priority>0.9</priority></url>
   <url><loc>https://academysbd.ru/services/individualnyy-kouching/</loc><priority>0.9</priority></url>

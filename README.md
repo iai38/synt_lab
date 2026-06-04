@@ -18,6 +18,7 @@ Settings → Pages → Source: `Deploy from a branch` → ветка `main`, п�
 ```
 synt_lab/
 ├── index.html                       # Главная (одностраничник со всеми блоками)
+├── ceny.html                        # Услуги и цены (полный прайс: команды/лидеры/компании/HR)
 ├── services/                        # 4 отдельные страницы услуг
 │   ├── komandnye-sessii.html
 │   ├── strategicheskie-sessii.html
